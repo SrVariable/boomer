@@ -247,7 +247,6 @@ proc main() =
               quit "Disaster prevented"
 
           generateDefaultConfig(newConfigPath)
-          quit "Generated config at $#" % [newConfigPath]
       of "-c", "--config":
         asParam(configParam):
           configFile = configParam
@@ -329,8 +328,8 @@ proc main() =
 
   discard XMapWindow(display, win)
 
-  var wmName = "boomer"
-  var wmClass = "Boomer"
+  var wmName: cstring = "boomer"
+  var wmClass: cstring = "Boomer"
   var hints = XClassHint(res_name: wmName, res_class: wmClass)
 
   discard XStoreName(display, win, wmName)

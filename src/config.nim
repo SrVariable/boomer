@@ -41,3 +41,4 @@ proc generateDefaultConfig*(filePath: string) =
   f.write("scroll_speed = ", defaultConfig.scroll_speed, "\n")
   f.write("drag_friction = ", defaultConfig.drag_friction, "\n")
   f.write("scale_friction = ", defaultConfig.scale_friction, "\n")
+  quit "Generated config at $#" % [filePath]
